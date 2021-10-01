@@ -8,7 +8,7 @@ from pyrogram.errors import UserNotParticipant
 from utils import get_filter_results, get_file_details, is_subscribed, get_poster
 BUTTONS = {}
 BOT = {}
-RATING = ["5.1/10 | IMDB", "6.2/10 | IMDB", "7.3/10 | IMDB", "8.4/10 | IMDB", "9.5/10 | IMDB", "7.6/10 | IMDB", "6.9/10 | IMDB", "6.6/10 | IMDB", "7.9/10 | IMDB", "5.4/10 | IMDB", "5.8/10 | IMDB", "8.7/10 | IMDB", "7.1/10 | IMDB", "9.1/10 | IMDB", ]
+RATING = ["(5.1/10)", "(6.2/10)", "(7.3/10)", "(8.4/10)", "(9.5/10)", "(7.6/10)", "(6.9/10)", "(6.6/10)", "(7.9/10)", "(5.4/10)", "(5.8/10)", "(8.7/10)", "(7.1/10)", "(9.1/10)", "(8.5/10)",]
 GENRES = ["fun, fact",
          "Thriller, Comedy",
          "Drama, Comedy",
@@ -118,7 +118,7 @@ async def filter(client, message):
         if poster:
             await message.reply_photo(photo=poster, caption=f"<b>🎬 Title :- {search}</b>\n<b>🌟 Rating :- 7.5/10 | IMDb</b>\n<b>🎭 Genre :- Action, Drama, Thriller, Entertainment</b>\n<b>💿 Quality :- HDRip</b>\n\n<b>© By @tvseriezzz ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
         else:
-            await message.reply_text(f"<b>🎬 Title :- {search}</b>\n<b>🌟 Rating :- 7.5/10 | IMDb</b>\n<b>🎭 Genre :- Action, Drama, Thriller, Entertainment</b>\n\n<b>© By @tvseriezzz ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_text(f"<b>🎬 Title :- {search}</b>\n<b>🌟 IMDb Rating :- (7.5/10)</b>\n<b>🎭 Genre :- Action, Drama, Thriller, Entertainment</b>\n\n<b>© By @tvseriezzz ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(buttons))
 
 @Client.on_message(filters.text & filters.group & filters.incoming & filters.chat(AUTH_GROUPS) if AUTH_GROUPS else filters.text & filters.group & filters.incoming)
 async def group(client, message):
@@ -128,7 +128,7 @@ async def group(client, message):
         btn = []
 
         search = message.text
-        result_txt = f"<b>🎬 Title :- {search}</b>\n<b>🌟 Rating :- {random.choice(RATING)}</b>\n<b>🎭 Genre :- {random.choice(GENRES)}</b>\n<b>💿 Quality :- HDRip</b>\n\n<b>©️ {message.chat.title} </b>"
+        result_txt = f"<b>🎬 Title :- {search}</b>\n\n<b>🌟 IMDb Rating :- {random.choice(RATING)}</b>\n\n<b>🎭 Genre :- {random.choice(GENRES)}</b>\n\n<b>💿 Quality :- HDRip</b>\n\n<b>©️ {message.chat.title} </b>"
 
         nyva=BOT.get("username")
         if not nyva:
