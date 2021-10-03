@@ -76,7 +76,7 @@ async def filter(client, message):
                     [InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}")]
                     )
         else:
-            await client.send_sticker(chat_id=message.from_user.id, sticker='CAACAgUAAxkBAAIHJmFDd11C0qLSH4F-E-lP7rQI3fh2AALTAwACT10hVpVbZ7w2zcdPIAQ')
+            await client.send_message(chat_id=message.from_user.id, text='<b>Sorry, No Movie/Series Related to the Given Word Was Found 🥺</b>\n\n<b>Please Go to Google and Confirm the Correct Spelling 🙏</b>')
             return
 
         if not btn:
@@ -145,7 +145,7 @@ async def group(client, message):
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
                 )
         else:
-            await client.send_message(chat_id=message.from_user.id, text='<b>Sorry, No Movie Related to the Given Word Was Found 🥺</b>\n\n<b>Please Go to Google and Confirm the Correct Spelling 🙏</b>')
+            await client.send_message(nyva=botusername.username, text='<b>Sorry, No Movie/Series Related to the Given Word Was Found 🥺</b>\n\n<b>Please Go to Google and Confirm the Correct Spelling 🙏</b>')
             return
             
         if not btn:
