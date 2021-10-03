@@ -123,15 +123,6 @@ async def filter(client, message):
 
 @Client.on_message(filters.text & filters.group & filters.incoming & filters.chat(AUTH_GROUPS) if AUTH_GROUPS else filters.text & filters.group & filters.incoming)
 async def group(client, message):
-        return
-        except Exception:
-            await client.send_message(
-                chat_id=message.from_user.id,
-                text="Something went Wrong.",
-                parse_mode="markdown",
-                disable_web_page_preview=True
-            )
-            return
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
         return
     if 2 < len(message.text) < 50:    
