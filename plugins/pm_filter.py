@@ -145,7 +145,7 @@ async def group(client, message):
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
                 )
         else:
-            await client.send_sticker(chat_id=message.from_user.id, sticker='CAACAgUAAxkBAAIHJmFDd11C0qLSH4F-E-lP7rQI3fh2AALTAwACT10hVpVbZ7w2zcdPIAQ')
+            await client.send_text(chat_id=message.from_user.id, text='Sorry, No Movie Related to the Given Word Was Found 🥺\n\nPlease Go to Google and Confirm the Correct Spelling 🙏')
             return
             
         if not btn:
