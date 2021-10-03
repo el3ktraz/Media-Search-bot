@@ -145,19 +145,7 @@ async def group(client, message):
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
                 )
         else:
-         Send_message=await bot.send_video(
-                chat_id=update.chat.id,
-                video="https://telegra.ph/file/c2c0ff4b927dcc50e7922.mp4",
-                caption=f"Couldn't Find This Movie.Please Try Again Or Search Google.
-                 \n\n"
-                        f"ഈ സിനിമയുടെ ഒറിജിനൽ പേര് ഗൂഗിളിൽ പോയി കണ്ടെത്തി അതുപോലെ ഇവിടെ കൊടുക്കുക🔍കൂടുതൽ അറിയാൻ വീഡിയോ കാണുക(25 Sec)",
-                parse_mode="html",
-                reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "🔍 Google 🔎", url=f"https://t.me/joinchat/Myfreak123" 
-                    )
+             await client.send_sticker(chat_id=message.from_user.id, sticker='CAACAgUAAxkBAAIHJmFDd11C0qLSH4F-E-lP7rQI3fh2AALTAwACT10hVpVbZ7w2zcdPIAQ')
             return
             
         if not btn:
