@@ -109,7 +109,7 @@ async def start(bot, cmd):
                         InlineKeyboardButton("🔥 Dev 🔥", url="https://t.me/MrC_VENOM")
                     ],
                     [
-                        InlineKeyboardButton("😌 About 😌", callback_data="about")
+                        InlineKeyboardButton("𝙰𝚋𝚘𝚞𝚝 🚩", callback_data="about")
                     ]
                 ]
             )
@@ -198,8 +198,15 @@ async def delete(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️', url='https://t.me/tvseriezzz_update'),
-            InlineKeyboardButton('♻️ ⒼⓇⓄⓊⓅ ♻️', url='https://t.me/tvseriezzz')
+            InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz"),
+            InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update")
+        ],
+        [
+            InlineKeyboardButton("🏠 𝙷𝚘𝚖𝚎", callback_data="start"),
+            InlineKeyboardButton("⚙️ 𝙷𝚎𝚕𝚙 ⚙️", callback_data="help")
+        ],
+        [
+            InlineKeyboardButton("Close 🔐", callback_data="close")
         ]
         ]
     await message.reply(text="<b>Developer : <a href='https://t.me/MrC_VENOM'>MrC《》VENOM</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSupport Group : <a href='https://t.me/tvseriezzz'>Click here</a>\nUpdate Channel : <a href='https://t.me/tvseriezzz_update'>♠️ 𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑 {Update}</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
@@ -208,8 +215,15 @@ async def bot_info(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️', url='https://t.me/tvseriezzz_update'),
-            InlineKeyboardButton('♻️ ⒼⓇⓄⓊⓅ ♻️', url='https://t.me/tvseriezzz')
+            InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz"),
+            InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update")
+        ],
+        [
+            InlineKeyboardButton("🏠 𝙷𝚘𝚖𝚎", callback_data="start"),
+            InlineKeyboardButton("𝙰𝚋𝚘𝚞𝚝 🚩", callback_data="about")
+        ],
+        [
+            InlineKeyboardButton("Close 🔐", callback_data="close")
         ]
         ]
     await message.reply(text="<b>If You Have Any Doubts And If Any Errors or Bugs Inform Us On Our Support Group ❗️\n Use Below Buttons To Get Support Group / Update channel Links </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
