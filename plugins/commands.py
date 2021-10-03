@@ -1,7 +1,6 @@
 import os
 import logging
 from pyrogram import Client, filters
-from pyrogram import StopPropagation
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
 from utils import Media, get_file_details
@@ -97,18 +96,22 @@ async def start(bot, cmd):
             photo="https://te.legra.ph/file/af475dab6bdc7c0ba1c1e.jpg",
             caption=START_MSG,
             reply_markup=InlineKeyboardMarkup(
-                [[
-                InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url='https://t.me/tvseriezzz_bot?startgroup=true'),
-     
-                InlineKeyboardButton("♻️ 𝙂𝙍𝙊𝙐𝙋 ♻️", url='https://t.me/tvseriezzz'),
-                InlineKeyboardButton("⭕️ 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 ⭕️", url='https://t.me/tvseriezzz_update'),
-      
-                InlineKeyboardButton("♻️ 𝙂𝙍𝙊𝙐𝙋 2 ♻️", url='https://t.me/MrCVENOM_chat'),
-                InlineKeyboardButton("🔥 Dev 🔥", url='https://t.me/MrC_VENOM')
-  
+                [
+                    [
+                        InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz"),
+                        InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update")
+                    ],
+                    [
+                        InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url='https://t.me/tvseriezzz_bot?startgroup=true')
+                    ],
+                    [
+                        InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ 2 ♻️", url="https://t.me/MrCVENOM_chat"),
+                        InlineKeyboardButton("🔥Dev🔥", url='https://t.me/MrC_VENOM")
+                    ]
+                ]
             )
         )
-        StopPropagation
+
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
