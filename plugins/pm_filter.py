@@ -146,12 +146,6 @@ async def group(client, message):
                 )
         else:
             await client.send_message(chat_id=message, text='<b>Sorry, No Movie Related to the Given Word Was Found 🥺</b>\n\n<b>Please Go to Google and Confirm the Correct Spelling 🙏</b>')
-            reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "🔍 Google 🔎", url=f"https://www.google.com/search?q="search" 
-                    )
             return
             
         if not btn:
