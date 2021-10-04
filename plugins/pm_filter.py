@@ -147,11 +147,11 @@ async def group(client, message):
         else:
             await message.reply(quote=True,text="<b>Sorry, No Movie/Series Related to the Given Word Was Found 🥺</b>\n\n<b>Please Go to Google and Confirm the Correct Spelling 🙏</b>")
             reply_markup=InlineKeyboardMarkup(
-                 [
-                     [
-                         InlineKeyboardButton("🔍 Search 🔎", url='https://www.google.com')
-                     ]
-                 ]
+                [
+                    [
+                        InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
+                    ]
+                ]
             )
             return
             
