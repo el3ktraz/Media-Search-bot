@@ -152,8 +152,7 @@ async def group(client, message):
                             InlineKeyboardButton('🔍 Search 🔎', url='https://www.google.com/search?q={search}')
                         ]
                     ]
-                ),
-                parse_mode="markdown"
+                )
             )
             return
             
