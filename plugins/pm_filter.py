@@ -149,10 +149,12 @@ async def group(client, message):
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("🔍 Search 🔎", url="https://www.google.com/search?q={search}")
+                            InlineKeyboardButton('🔍 Search 🔎', url='https://www.google.com/search?q={search}')
                         ]
                     ]
-                )
+                ),
+                parse_mode="markdown"
+            )
             return
             
         if not btn:
