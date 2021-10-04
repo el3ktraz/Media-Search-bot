@@ -153,14 +153,7 @@ async def group(client, message):
                         ]
                     ]
                 ),
-                parse_mode="markdown"
-            )
-            return
-        except Exception:
-            await message.reply(
-                quote=True,
-                text="Something went Wrong.",
-                parse_mode="markdown",
+                
                 disable_web_page_preview=True
             )
             return
