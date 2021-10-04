@@ -152,10 +152,7 @@ async def group(client, message):
                             InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
                         ]
                     ]
-                ),
-                
-                disable_web_page_preview=True
-            )
+                )
             return
             
         if not btn:
