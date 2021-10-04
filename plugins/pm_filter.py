@@ -145,7 +145,15 @@ async def group(client, message):
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
                 )
         else:
-            await message.reply(quote=True,text="<b>Sorry, No Movie/Series Related to the Given Word Was Found 🥺</b>\n\n<b>Please Go to Google and Confirm the Correct Spelling 🙏</b>\n\n<b>Click Here To 👉 <a href='https://www.google.com/search?q={search}'>🔍 Search 🔎</a> </b>")
+            await message.reply(quote=True,text="<b>Sorry, No Movie/Series Related to the Given Word Was Found 🥺</b>\n\n<b>Please Go to Google and Confirm the Correct Spelling 🙏</b>\n\n<b>Click Here To 👉 <a href='https://www.google.com/search?q={}'>🔍 Search 🔎</a> </b>")
+            reply_markup=InlineKeyboardMarkup(
+                        [
+                            [InlineKeyboardButton(
+                                "🔎 Click Here & Go to Google 🔍", url="https://www.google.com/search?q={}".format(query_message, updated_query))
+                             ]
+                        ]
+                    )
+                )
             return
             
         if not btn:
