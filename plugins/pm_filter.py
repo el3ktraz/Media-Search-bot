@@ -146,14 +146,6 @@ async def group(client, message):
                 )
         else:
             await message.reply(quote=True,text="<b>Sorry, No Movie/Series Related to the Given Word Was Found 🥺</b>\n\n<b>Please Go to Google and Confirm the Correct Spelling 🙏</b>\n\n<b>Click Here To 👉 <a href='https://www.google.com'>🔍 Search 🔎</a> </b>\n\n<b>✍ Admins :- ♠️ 𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑 🎬</b>")
-                message.reply(
-                quote=True,
-                reply_markup=InlineKeyboardMarkup(
-                    [
-                        [InlineKeyboardButton("Docs", url="https://docs.pyrogram.org")]
-                    ]
-                )
-            )
             return
     
         if not btn:
