@@ -93,7 +93,7 @@ async def start(bot, cmd):
         )
     else:
         await cmd.reply_video(
-            video="https://telegra.ph/file/aef39e41220c490bc9664.mp4",
+            video="https://telegra.ph/file/a8cf4f7ac8f80c18eec22.mp4",
             caption=START_MSG,
             reply_markup=InlineKeyboardMarkup(
                 [
