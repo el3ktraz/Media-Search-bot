@@ -80,7 +80,7 @@ async def filter(client, message):
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("🔍 Go To Google & Search It 🔎", url=f"https://www.google.com")
+                            InlineKeyboardButton("🔍 Click Here & Go To Google 🔎", url=f"https://www.google.com")
                         ]
                     ]
                 ),
@@ -159,7 +159,7 @@ async def group(client, message):
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("🔍 Go To Google & Search It 🔎", url="https://www.google.com")
+                            InlineKeyboardButton("🔍 Click Here & Go To Google 🔎", url="https://www.google.com")
                         ]
                     ]
                 ),
