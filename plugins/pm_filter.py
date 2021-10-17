@@ -146,7 +146,7 @@ async def group(client, message):
                 )
         else:
             await message.reply(quote=True,
-            text=f"""<b>Sorry, No Movie/Series Related to the Given Word Was Found 🥺</b>\n\n<b>Please Go to Google and Confirm the Correct Spelling 🙏</b>\n\n\n<b>ക്ഷമിക്കണം, നൽകിയ വാക്കുമായി ബന്ധപ്പെട്ട സിനിമ/സീരീസ് ഇല്ല 🥺</b>\n\n<b>ദയവായി Google- ലേക്ക് പോയി ശരിയായ അക്ഷരവിന്യാസം സ്ഥിരീകരിക്കുക</b>\n\n\n<b>Click Here To 👉 <a href='https://www.google.com'>🔍 Search 🔎</a> </b>\n\n<b>✍ Or Your Spelling Is Correct Report To Admins For Add Requested File In Our Database</b>\n\n<b>Send Your Request In :- @MrC_VENOM_bot</b>""",
+            text=f"""**Sorry, No Movie/Series Related to the Given Word Was Found 🥺**\n\n<b>Please Go to Google and Confirm the Correct Spelling 🙏</b>\n\n\n<b>ക്ഷമിക്കണം, നൽകിയ വാക്കുമായി ബന്ധപ്പെട്ട സിനിമ/സീരീസ് ഇല്ല 🥺</b>\n\n<b>ദയവായി Google- ലേക്ക് പോയി ശരിയായ അക്ഷരവിന്യാസം സ്ഥിരീകരിക്കുക</b>\n\n\n<b>Click Here To 👉 <a href='https://www.google.com'>🔍 Search 🔎</a> </b>\n\n<b>✍ Or Your Spelling Is Correct Report To Admins For Add Requested File In Our Database</b>\n\n<b>Send Your Request In :- @MrC_VENOM_bot</b>""",
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
