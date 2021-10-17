@@ -76,11 +76,11 @@ async def filter(client, message):
                     [InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}")]
                     )
         else:
-            await client.send_message(chat_id=message.from_user.id,text=f"""**താഴെ ഉള്ള ബട്ടണിൽ ക്ലിക്ക് ചെയ്ത് ഗൂഗിളിൽ പോയി Correct Spelling കണ്ടുപിടിച്ച ശേഷം അത് കോപ്പി ചെയ്ത് ഇവിടെ Paste ചെയ്യുക**""",
+            await client.send_message(chat_id=message.from_user.id,text=f"""**Sorry, No Movie/Series Related to the Given Word Was Found 🥺**\n\n**Please Go to Google and Confirm the Correct Spelling 🙏**""",
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("🔍 Click Here & Go To Google 🔎", url=f"https://www.google.com/search?q={search}")
+                            InlineKeyboardButton("🔍 Click Here & Go To Google 🔎", url=f"https://www.google.com")
                         ]
                     ]
                 ),
@@ -155,11 +155,11 @@ async def group(client, message):
                 )
         else:
             await message.reply(quote=True,
-            text=f"""**Sorry, No Movie/Series Related to the Given Word Was Found 🥺**\n\n**Please Go to Google and Confirm the Correct Spelling 🙏**\n\n\n**ക്ഷമിക്കണം, നൽകിയ വാക്കുമായി ബന്ധപ്പെട്ട സിനിമ/സീരീസ് ഇല്ല 🥺**\n\n**ദയവായി Google- ലേക്ക് പോയി ശരിയായ അക്ഷരവിന്യാസം സ്ഥിരീകരിക്കുക**\n\n**✍ Or Your Spelling Is Correct Report To Admins For Add Requested File In Our Database**\n\n**Send Your Request In :- @MrC_VENOM_bot**""",
+            text=f"""**Sorry, No Movie/Series Related to the Given Word Was Found 🥺**\n\n**Please Go to Google and Confirm the Correct Spelling 🙏**""",
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("🔍 Search 🔎", url="https://www.google.com")
+                            InlineKeyboardButton("🔍 Click Here & Go To Google 🔎", url="https://www.google.com")
                         ]
                     ]
                 ),
