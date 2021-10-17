@@ -76,7 +76,16 @@ async def filter(client, message):
                     [InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}")]
                     )
         else:
-            await client.send_message(chat_id=message.from_user.id, text='<b>Sorry, No Movie/Series Related to the Given Word Was Found 🥺</b>\n\n<b>Please Go to Google and Confirm the Correct Spelling 🙏</b>')
+            await client.send_message(chat_id=message.from_user.id,text=f"""**താഴെ ഉള്ള ബട്ടണിൽ ക്ലിക്ക് ചെയ്ത് ഗൂഗിളിൽ പോയി Correct Spelling കണ്ടുപിടിച്ച ശേഷം അത് കോപ്പി ചെയ്ത് ഇവിടെ Paste ചെയ്യുക**""",
+            reply_markup=InlineKeyboardMarkup(
+                    [
+                        [
+                            InlineKeyboardButton("🔍 Click Here & Go To Google 🔎", url=f"https://www.google.com/search?q={search}")
+                        ]
+                    ]
+                ),
+                parse_mode="markdown"
+            )
             return
 
         if not btn:
