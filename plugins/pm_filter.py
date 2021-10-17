@@ -150,7 +150,7 @@ async def group(client, message):
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("🔍 Search 🔎", url=f"https://www.google.com/search?q={query}")
+                            InlineKeyboardButton("🔍 Search 🔎", url="https://www.google.com/search?q={search}")
                         ]
                     ]
                 ),
