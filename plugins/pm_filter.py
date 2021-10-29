@@ -155,7 +155,7 @@ async def group(client, message):
                 )
         else:
             await message.reply(quote=True,
-            text=f"""**Sorry, {message.from_user.first_name}**\n\n**No Movie/Series Related to the Given Word Was Found 🥺**\n\n**Please Go to Google and Confirm the Correct Spelling 🙏**""",
+            text=f"""**Sorry, {message.from_user.first_name} 🥺**\n\n**No Movie/Series Related to the Given Word Was Found 🥺**\n\n**Please Go to Google and Confirm the Correct Spelling 🙏**""",
             reply_markup=InlineKeyboardMarkup(
                     [
                         [
