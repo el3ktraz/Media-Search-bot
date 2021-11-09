@@ -1,5 +1,7 @@
 import re
 from motor.motor_asyncio import AsyncIOMotorClient
+from motor.motor_asyncio import AsyncIOMotorClient
+from marshmallow.exceptions import ValidationError
 from info import DATABASE_URI, DATABASE_NAME, COLLECTION_NAME, USE_CAPTION_FILTER
 
 
@@ -37,3 +39,16 @@ async def save_file(media):
             mime_type=media.mime_type,
             caption=media.caption.html if media.caption else None,
         )
+    except ValidationError:
+        logger.exception('Error occurred while saving file in database')
+        return False, 2
+    else:
+        try:
+            await file.commit()
+        except DuplicateKeyError:      
+            logger.warning(media.file_name + " is already saved in database")
+            return False, 0
+        else:
+            logger.info(media.file_name + " is saved in database")
+            return True, 1
+
