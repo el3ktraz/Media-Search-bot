@@ -9,9 +9,9 @@ import random
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 from pyrogram.errors import UserNotParticipant, PeerIdInvalid, FloodWait
-from utils import get_filter_results, get_file_details, is_subscribed, get_poster, temp
+from utils import is_subscribed, get_poster, temp
 from database.users_chats_db import db
-from database.ia_filterdb import Media
+from database.ia_filterdb import Media, get_filter_results, get_file_details
 from database.filters_mdb import(
    del_all,
    find_filter,
