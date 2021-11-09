@@ -69,7 +69,7 @@ async def start(client, message):
         ]
 
         if message.command[1] != "subscribe":
-            btn.append([InlineKeyboardButton("𝙏𝙍𝙔 𝘼𝙂𝘼𝙄𝙉🔄", callback_data=f"checksub#{file_id}")])
+            btn.append([InlineKeyboardButton("𝙏𝙍𝙔 𝘼𝙂𝘼𝙄𝙉🔄", callback_data=f"checksub#{message.command[1]}")])
         await client.send_message(
             chat_id=message.from_user.id,
             text="**𝙔𝙤𝙪 𝙉𝙚𝙚𝙙 𝙏𝙤 𝙅𝙤𝙞𝙣 𝙈𝙮 𝘾𝙝𝙖𝙩 𝙁𝙤𝙧 𝙂𝙚𝙩𝙩𝙞𝙣𝙜 𝙏𝙝𝙞𝙨 𝙁𝙞𝙡𝙚 𝙎𝙤 𝙆𝙞𝙣𝙙𝙡𝙮 𝙅𝙤𝙞𝙣 !!**",
@@ -100,10 +100,10 @@ async def start(client, message):
             parse_mode='html'
         )
         return
-ident, file_id = cmd.text.split("_-_-_-_")
-filedetails = (await get_file_details(file_id)
+    file_id = message.command[1]
+    files = (await get_file_details(file_id))[0]
     title = files.file_name
-    size=files.file_size
+    size=get_size(files.file_size)
     f_caption=files.caption
     if CUSTOM_FILE_CAPTION:
         try:
