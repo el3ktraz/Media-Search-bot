@@ -76,9 +76,6 @@ async def give_filter(client,message):
                     logger.exception(e)
                 break 
 
-    else:
-        await auto_filter(client, message)
-
 @Client.on_message(filters.text & filters.private & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.text & filters.private & filters.incoming)
 async def filter(client, message):
     if message.text.startswith("/"):
@@ -117,9 +114,6 @@ async def filter(client, message):
                 disable_web_page_preview=True
             )
             return
-async def auto_filter(client, msg, spoll=False):
-    if not spoll:
-        message = msg
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
         return
     if 2 < len(message.text) < 100:    
