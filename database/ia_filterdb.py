@@ -52,3 +52,10 @@ async def save_file(media):
             logger.info(media.file_name + " is saved in database")
             return True, 1
 
+
+async def get_file_details(query):
+    filter = {'file_id': query}
+    cursor = Media.find(filter)
+    filedetails = await cursor.to_list(length=1)
+    return filedetails
+
