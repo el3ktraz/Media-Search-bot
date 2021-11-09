@@ -498,10 +498,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         elif query.data.startswith("subinps"):
             ident, file_id = query.data.split("#")
-            filedetails = await get_file_details(file_id)
-            for files in filedetails:
+            files_ = await get_file_details(file_id)
+            if not files_:
+                return await query.answer('No such file exist.')
+                files = files_[0]
                 title = files.file_name
-                size=files.file_size
+                size=get_size(files.file_size)
                 f_caption=files.caption
                 if CUSTOM_FILE_CAPTION:
                     try:
@@ -530,10 +532,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒",show_alert=True)
                 return
             ident, file_id = query.data.split("#")
-            filedetails = await get_file_details(file_id)
-            for files in filedetails:
+            files_ = await get_file_details(file_id)
+            if not files_:
+                return await query.answer('No such file exist.')
+                files = files_[0]
                 title = files.file_name
-                size=files.file_size
+                size=get_size(files.file_size)
                 f_caption=files.caption
                 if CUSTOM_FILE_CAPTION:
                     try:
