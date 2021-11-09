@@ -4,8 +4,10 @@ import random
 from Script import script
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from database.ia_filterdb import Media, get_file_details
+from database.users_chats_db import db
 from info import CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, PICS
-from utils import Media, get_file_details
+from utils import temp
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
@@ -96,7 +98,7 @@ async def start(bot, cmd):
     else: 
         await cmd.reply_video(
             video=random.choice(PICS),
-            caption=script.START_TXT,
+            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
