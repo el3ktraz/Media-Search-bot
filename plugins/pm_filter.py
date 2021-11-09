@@ -365,6 +365,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 [
                     InlineKeyboardButton('🏠 Home', callback_data='start'),
                     InlineKeyboardButton('🔮 Status', callback_data='stats')
+                ],
+                [
+                    InlineKeyboardButton('🔐 Close', callback_data='close_data')
                 ]
                 ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -381,7 +384,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],
                 [
                    InlineKeyboardButton('🏠 Home', callback_data='start'),
-                   InlineKeyboardButton('🔐 Close', callback_data='close_data')
+                   InlineKeyboardButton('ℹ️ Help', callback_data='help')
+                ],
+                [
+                    InlineKeyboardButton('🔐 Close', callback_data='close_data')
                 ]
                 ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -394,6 +400,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             buttons = [
                 [
                     InlineKeyboardButton('👩‍🦯 Back', callback_data='about')
+                ],
+                [
+                    InlineKeyboardButton('🔐 Close', callback_data='close_data')
                 ]
                 ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -407,6 +416,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 [
                     InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
                     InlineKeyboardButton('⏹️ Buttons', callback_data='button')
+                ],
+                [
+                    InlineKeyboardButton('🔐 Close', callback_data='close_data')
                 ]
                 ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -419,6 +431,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             buttons = [
                 [
                     InlineKeyboardButton('👩‍🦯 Back', callback_data='manuelfilter')
+                ],
+                [
+                    InlineKeyboardButton('🔐 Close', callback_data='close_data')
                 ]
                 ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -431,6 +446,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             buttons = [
                 [
                     InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
+                ],
+                [
+                    InlineKeyboardButton('🔐 Close', callback_data='close_data')
                 ]
                 ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -443,6 +461,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             buttons = [
                 [
                     InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
+                ],
+                [
+                    InlineKeyboardButton('🔐 Close', callback_data='close_data')
                 ]
                 ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -454,8 +475,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "extra":
             buttons = [
                 [
-                    InlineKeyboardButton('🏠 Home', callback_data='start'),
-                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
+                    InlineKeyboardButton('🏠 Home', callback_data='start')
+                ],
+                [
+                    InlineKeyboardButton('🔐 Close', callback_data='close_data')
                 ]
                 ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -468,6 +492,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             buttons = [
                 [
                     InlineKeyboardButton('👩‍🦯 Back', callback_data='extra')
+                ],
+                [
+                    InlineKeyboardButton('🔐 Close', callback_data='close_data')
                 ]
                 ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -481,6 +508,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 [
                     InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
                     InlineKeyboardButton('♻️ Refresh', callback_data='rfrsh')
+                ],
+                [
+                    InlineKeyboardButton('🔐 Close', callback_data='close_data')
                 ]
                 ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -502,6 +532,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 [
                     InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
                     InlineKeyboardButton('♻️ Refresh', callback_data='rfrsh')
+                ],
+                [
+                    InlineKeyboardButton('🔐 Close', callback_data='close_data')
                 ]
                 ]
             reply_markup = InlineKeyboardMarkup(buttons)
