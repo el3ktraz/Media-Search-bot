@@ -98,7 +98,7 @@ async def start(bot, cmd):
     else: 
         await cmd.reply_video(
             video=random.choice(PICS),
-            caption=script.START_TXT.format(from_user.mention, temp.U_NAME, temp.B_NAME),
+            caption=script.START_TXT,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
