@@ -100,7 +100,7 @@ async def start(client, message):
             parse_mode='html'
         )
         return
-    file_id = message.command[1]
+    file_id = file_id
     files = (await get_file_details(file_id))[0]
     title = files.file_name
     size=get_size(files.file_size)
