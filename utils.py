@@ -270,6 +270,11 @@ async def get_file_details(query):
     filedetails = await cursor.to_list(length=1)
     return filedetails
 
+BANNED = {}
+SMART_OPEN = '“'
+SMART_CLOSE = '”'
+START_CHAR = ('\'', '"', SMART_OPEN)
+
 # temp db for banned 
 class temp(object):
     BANNED_USERS = []
