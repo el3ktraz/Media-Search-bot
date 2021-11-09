@@ -5,6 +5,7 @@ from pyrogram import Client, filters
 import re
 import pyrogram
 import random
+from Script import script
 from pyrogram.errors import UserNotParticipant
 from utils import get_filter_results, get_file_details, is_subscribed, get_poster
 BUTTONS = {}
