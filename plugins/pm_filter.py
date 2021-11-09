@@ -6,6 +6,7 @@ import asyncio
 import re
 import pyrogram
 import random
+from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 from pyrogram.errors import UserNotParticipant, PeerIdInvalid, FloodWait
 from utils import get_filter_results, get_file_details, is_subscribed, get_poster, temp
