@@ -117,6 +117,9 @@ async def filter(client, message):
                 disable_web_page_preview=True
             )
             return
+async def auto_filter(client, msg, spoll=False):
+    if not spoll:
+        message = msg
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
         return
     if 2 < len(message.text) < 100:    
