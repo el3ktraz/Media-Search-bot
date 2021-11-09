@@ -102,7 +102,6 @@ async def start(client, message):
         return
 ident, file_id = cmd.text.split("_-_-_-_")
 filedetails = (await get_file_details(file_id)
-for files in filedetails:
     title = files.file_name
     size=files.file_size
     f_caption=files.caption
