@@ -49,10 +49,6 @@ async def give_filter(client,message):
             if reply_text:
                 reply_text = reply_text.replace("\\n", "\n").replace("\\t", "\t")
 
-                except Exception as e:
-                    logger.exception(e)
-                break 
-
     else:
         await auto_filter(client, message)
 
