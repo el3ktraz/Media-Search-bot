@@ -354,8 +354,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "help":
             buttons = [
                 [
-                    InlineKeyboardButton('🏠 Home', callback_data='start'),
+                    InlineKeyboardButton('😌 Extra Mods', callback_data='extra'),
                     InlineKeyboardButton('🔮 Status', callback_data='stats')
+                ],
+                [
+                   InlineKeyboardButton('🏠 Home', callback_data='start')
                 ]
                 ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -390,6 +393,19 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
                 text=script.SOURCE_TXT,
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
+        elif query.data == "extra":
+            buttons = [
+                [
+                    InlineKeyboardButton('🏠 Home', callback_data='start'),
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
+                ]
+                ]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            await query.message.edit_text(
+                text=script.EXTRAMOD_TXT,
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
