@@ -1,5 +1,7 @@
 import os
 import logging
+import random
+from Script import script
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
@@ -109,7 +111,11 @@ async def start(bot, cmd):
                         InlineKeyboardButton("🔥 Dev 🔥", url="https://t.me/MrC_VENOM")
                     ],
                     [
-                        InlineKeyboardButton("𝙰𝚋𝚘𝚞𝚝 🚩", callback_data="about")
+                        InlineKeyboardButton('ℹ️ Help', callback_data='help'),
+                        InlineKeyboardButton('😊 About', callback_data='about')
+                    ],
+                    [
+                        InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='') 
                     ]
                 ]
             )
@@ -194,25 +200,3 @@ async def delete(bot, message):
         await msg.edit('File is successfully deleted from database')
     else:
         await msg.edit('File not found in database')
-@Client.on_message(filters.command('about'))
-async def bot_info(bot, message):
-    buttons = [
-        [
-            InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz"),
-            InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update")
-        ]
-        ]
-    await message.reply(text="<b>Developer : <a href='https://t.me/MrC_VENOM'>MrC《》VENOM</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSupport Group : <a href='https://t.me/tvseriezzz'>Click here</a>\nUpdate Channel : <a href='https://t.me/tvseriezzz_update'>♠️ 𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑 {Update}</a> </b>\n<b>Click Here For Help 👉 /help</b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
-
-@Client.on_message(filters.command('help'))
-async def bot_info(bot, message):
-    buttons = [
-        [
-            InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz"),
-            InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update")
-        ],
-        [
-            InlineKeyboardButton("𝙰𝚋𝚘𝚞𝚝 🚩", callback_data='about')
-        ]
-        ]
-    await message.reply(text="<b>If You Have Any Doubts And If Any Errors or Bugs Inform Us On Our Support Group ❗️\n Use Below Buttons To Get Support Group / Update channel Links </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
