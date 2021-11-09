@@ -12,6 +12,11 @@ from pyrogram.errors import UserNotParticipant, PeerIdInvalid, FloodWait
 from utils import get_filter_results, get_file_details, is_subscribed, get_poster, temp
 from database.users_chats_db import db
 from database.ia_filterdb import Media
+from database.filters_mdb import(
+   del_all,
+   find_filter,
+   get_filters,
+)
 BUTTONS = {}
 BOT = {}
 RATING = ["(5.1/10)", "(6.2/10)", "(7.3/10)", "(8.4/10)", "(9.5/10)", "(7.6/10)", "(6.9/10)", "(6.6/10)", "(7.9/10)", "(5.4/10)", "(5.8/10)", "(8.7/10)", "(7.1/10)", "(9.1/10)", "(8.5/10)",]
