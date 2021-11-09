@@ -1,5 +1,6 @@
 import os
 from pyrogram import Client, filters
+from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 
 from utils import extract_user, last_online
 import time
