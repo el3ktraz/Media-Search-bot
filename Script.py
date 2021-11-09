@@ -1,11 +1,11 @@
 class script(object):
-    START_TXT = """𝙷𝙴𝙻𝙻𝙾 <a href='tg://setting'>𝙵𝚛𝚒𝚎𝚗𝚍</a> 😊,
+    START_TXT = """𝙷𝙴𝙻𝙻𝙾 <a href='tg://settings/'>𝙵𝚛𝚒𝚎𝚗𝚍</a> 😊,
 
 𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href='https://t.me/tvseriezzz_bot'>𝙰𝚕𝚊𝚗 𝚆𝚊𝚕𝚔𝚎𝚛</a>,
 𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂 𝙰𝙽𝙳 𝚂𝙴𝚁𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈 😍
 
 ©️ MᴀɪɴᴛᴀɪɴᴇD Bʏ : <a href='https://t.me/tvseriezzz'>♠️ 𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑</a>"""
-    HELP_TXT = """𝙷𝙴𝚈 <a href='tg://setting'>𝙵𝚛𝚒𝚎𝚗𝚍</a> 😊,
+    HELP_TXT = """𝙷𝙴𝚈 <a href='tg://settings/'>𝙵𝚛𝚒𝚎𝚗𝚍</a> 😊,
 𝙷𝙴𝚁𝙴 𝙸𝚂 𝚃𝙷𝙴 𝙷𝙴𝙻𝙿 𝙵𝙾𝚁 𝙼𝚈 𝙲𝙾𝙼𝙼𝙰𝙽𝙳𝚂.
 
 <b>NOTE:</b>
