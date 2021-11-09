@@ -355,11 +355,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "help":
             buttons = [
                 [
-                    InlineKeyboardButton('😌 Extra Mods', callback_data='extra'),
-                    InlineKeyboardButton('🔮 Status', callback_data='stats')
+                    InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
+                    InlineKeyboardButton('Auto Filter', callback_data='autofilter')
                 ],
                 [
-                   InlineKeyboardButton('🏠 Home', callback_data='start')
+                    InlineKeyboardButton('Connection', callback_data='coct')
+                    InlineKeyboardButton('😌 Extra Mods', callback_data='extra'),
+                ],
+                [
+                    InlineKeyboardButton('🔮 Status', callback_data='stats'),
+                    InlineKeyboardButton('🏠 Home', callback_data='start')
                 ]
                 ]
             reply_markup = InlineKeyboardMarkup(buttons)
@@ -397,6 +402,55 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
+        elif query.data == "manuelfilter":
+            buttons = [
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
+                    InlineKeyboardButton('⏹️ Buttons', callback_data='button')
+                ]
+                ]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            await query.message.edit_text(
+                text=script.MANUELFILTER_TXT,
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
+        elif query.data == "button":
+            buttons = [
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='manuelfilter')
+                ]
+                ]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            await query.message.edit_text(
+                text=script.BUTTON_TXT,
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
+        elif query.data == "autofilter":
+            buttons = [
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
+                ]
+                ]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            await query.message.edit_text(
+                text=script.AUTOFILTER_TXT,
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
+        elif query.data == "coct":
+            buttons = [
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
+                ]
+                ]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            await query.message.edit_text(
+                text=script.CONNECTION_TXT,
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
         elif query.data == "extra":
             buttons = [
                 [
@@ -407,6 +461,18 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_text(
                 text=script.EXTRAMOD_TXT,
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
+        elif query.data == "admin":
+            buttons = [
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='extra')
+                ]
+                ]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            await query.message.edit_text(
+                text=script.ADMIN_TXT,
                 reply_markup=reply_markup,
                 parse_mode='html'
             )
