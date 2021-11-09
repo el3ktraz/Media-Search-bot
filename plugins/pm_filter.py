@@ -238,6 +238,8 @@ def split_list(l, n):
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
+    if query.data == "close_data":
+        await query.message.delete()
     clicked = query.from_user.id
     try:
         typed = query.message.reply_to_message.from_user.id
@@ -320,6 +322,33 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     reply_markup=InlineKeyboardMarkup(buttons)
                 )
                 return
+        elif query.data == "start":
+            buttons = [
+                [
+                    InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url="https://t.me/tvseriezzz_bot?startgroup=botstart")
+                ],
+                [
+                    InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz"),
+                    InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update")
+                ],
+                [
+                    InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ 2 ♻️", url="https://t.me/MrCVENOM_chat"),
+                    InlineKeyboardButton("🔥 Dev 🔥", url="https://t.me/MrC_VENOM")
+                ],
+                [
+                    InlineKeyboardButton('ℹ️ Help', callback_data='help'),
+                    InlineKeyboardButton('😊 About', callback_data='about')
+                ],
+                [
+                    InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='') 
+                ]
+                ]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            await query.message.edit_text(
+                text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
         elif query.data == "help":
             buttons = [
                 [
