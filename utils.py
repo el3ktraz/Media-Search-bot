@@ -2,6 +2,7 @@ import re
 import base64
 import logging
 from struct import pack
+from imdb import IMDb
 from pyrogram.errors import UserNotParticipant
 from pyrogram.file_id import FileId
 from pymongo.errors import DuplicateKeyError
@@ -175,46 +176,66 @@ async def is_subscribed(bot, query):
 
     return False
 
-async def get_poster(movie):
-    extract = PTN.parse(movie)
-    try:
-        title=extract["title"]
-    except KeyError:
-        title=movie
-    try:
-        year=extract["year"]
-        year=int(year)
-    except KeyError:
-        year=None
-    if year:
-        filter = {'$and': [{'title': str(title).lower().strip()}, {'year': int(year)}]}
-    else:
-        filter = {'title': str(title).lower().strip()}
-    cursor = Poster.find(filter)
-    is_in_db = await cursor.to_list(length=1)
-    poster=None
-    if is_in_db:
-        for nyav in is_in_db:
-            poster=nyav.poster
-    else:
-        if year:
-            url=f'https://www.omdbapi.com/?s={title}&y={year}&apikey={API_KEY}'
+async def get_poster(query, bulk=False, id=False):
+    if not id:
+        # https://t.me/GetTGLink/4183
+        pattern = re.compile(r"^(([a-zA-Z\s])*)?\s?([1-2]\d\d\d)?", re.IGNORECASE)
+        match = pattern.match(query)
+        year = None
+        if match:
+            title = match.group(1)
+            year = match.group(3)
         else:
-            url=f'https://www.omdbapi.com/?s={title}&apikey={API_KEY}'
-        try:
-            n = requests.get(url)
-            a = json.loads(n.text)
-            if a["Response"] == 'True':
-                y = a.get("Search")[0]
-                v=y.get("Title").lower().strip()
-                poster = y.get("Poster")
-                year=y.get("Year")[:4]
-                id=y.get("imdbID")
-                await get_all(a.get("Search"))
-        except Exception as e:
-            logger.exception(e)
-            pass
-    return poster
+            title = query
+        movieid = imdb.search_movie(title.lower(), results=10)
+        if not movieid:
+            return None
+        if year:
+            filtered=list(filter(lambda k: str(k.get('year')) == str(year), movieid))
+            if not filtered:
+                filtered = movieid
+        else:
+            filtered = movieid
+        movieid=list(filter(lambda k: k.get('kind') in ['movie', 'tv series'], filtered))
+        if not movieid:
+            movieid = filtered
+        if bulk:
+            return movieid
+        movieid = movieid[0].movieID
+    else:
+        movieid = int(query)
+    movie = imdb.get_movie(movieid)
+    title = movie.get('title')
+    genres = ", ".join(movie.get("genres")) if movie.get("genres") else None
+    rating = str(movie.get("rating"))
+    if movie.get("original air date"):
+        date = movie["original air date"]
+    elif movie.get("year"):
+        date = movie.get("year")
+    else:
+        date = "N/A"
+    poster = movie.get('full-size cover url')
+    plot = ""
+    if LONG_IMDB_DESCRIPTION:
+        plot = movie.get('plot')
+        if plot and len(plot) > 0:
+            plot = plot[0]
+    else:
+        plot = movie.get('plot outline')
+    if plot and len(plot) > 800:
+        plot = plot[0:800] + "..."
+    return {
+        'title': title,
+        'year': date,
+        'genres': genres,
+        'poster': poster,
+        'plot': plot,
+        'rating': rating,
+        'url':f'https://www.imdb.com/title/tt{movieid}'
+
+    }
+
+# https://github.com/odysseusmax/animated-lamp/blob/2ef4730eb2b5f0596ed6d03e7b05243d93e3415b/bot/utils/broadcast.py#L37
 
 
 async def get_all(list):
