@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from info import ADMINS
-from utils import get_size
+from utils
 from Script import script
 
 
