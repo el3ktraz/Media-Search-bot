@@ -98,7 +98,7 @@ async def auto_filter(client, msg, spoll=False):
             botusername=await client.get_me()
             nyva=botusername.username
             BOT["username"]=nyva
-        files = await get_filter_results(query=search)
+        files = await get_search_results(query=search)
         if files:
             for file in files:
                 file_id = file.file_id
