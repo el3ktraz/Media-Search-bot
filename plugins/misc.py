@@ -49,18 +49,6 @@ async def showid(client, message):
             _id,
             quote=True
         )
-        buttons = [[
-            InlineKeyboardButton('🔐 Close', callback_data='close_data')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_text(
-            text=message_out_str,
-            reply_markup=reply_markup,
-            quote=True,
-            parse_mode="html",
-            disable_notification=True
-        )
-    await status_message.delete()
 
 @Client.on_message(filters.command(["info"]))
 async def who_is(client, message):
