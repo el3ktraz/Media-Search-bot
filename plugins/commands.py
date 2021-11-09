@@ -5,7 +5,7 @@ from Script import script
 from pyrogram import Client, filters
 from pyrogram.errors.exceptions.bad_request_400 import ChatAdminRequired
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from database.ia_filterdb import Media
+from database.ia_filterdb import Media, get_file_details
 from database.users_chats_db import db
 from info import CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, LOG_CHANNEL, PICS
 from pyrogram.errors import UserNotParticipant
@@ -40,9 +40,6 @@ async def start(client, message):
             ],[
             InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz"),
             InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update")
-            ],[
-            InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ 2 ♻️", url="https://t.me/MrCVENOM_chat"),
-            InlineKeyboardButton("🔥 Dev 🔥", url="https://t.me/MrC_VENOM")
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
@@ -87,6 +84,9 @@ async def start(client, message):
             InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz"),
             InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update")
             ],[
+            InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ 2 ♻️", url="https://t.me/MrCVENOM_chat"),
+            InlineKeyboardButton("🔥 Dev 🔥", url="https://t.me/MrC_VENOM")
+            ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
             ],[
@@ -101,10 +101,7 @@ async def start(client, message):
         )
         return
     file_id = message.command[1]
-    files_ = await get_file_details(file_id)
-    if not files_:
-        return await message.reply('No such file exist.')
-    files = files_[0]
+    files = (await get_file_details(file_id))[0]
     title = files.file_name
     size=get_size(files.file_size)
     f_caption=files.caption
