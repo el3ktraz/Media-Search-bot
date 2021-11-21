@@ -4,6 +4,7 @@ import logging
 from struct import pack
 from pyrogram.errors import UserNotParticipant
 from pyrogram.types import Message
+from typing import Union
 from pyrogram.file_id import FileId
 from pymongo.errors import DuplicateKeyError
 from umongo import Instance, Document, fields
