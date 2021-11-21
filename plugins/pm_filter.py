@@ -373,7 +373,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton("🏠 Home", callback_data="start")
                 ]
                 ]
-            await query.message.edit(text=Help: <b>Extra Modules</b>\n\n<b>NOTE:</b>\n\n<b>These are the extra features of Alan Walker</b>/n/n<b>Commands and Usage:</b>\n• /id - <code>get id of a specifed user.</code>\n• /info  - <code>get information about a user.</code>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text="Help: <b>Extra Modules</b>\n\n<b>NOTE:</b>\n\n<b>These are the extra features of Alan Walker</b>/n/n<b>Commands and Usage:</b>\n• /id - <code>get id of a specifed user.</code>\n• /info  - <code>get information about a user.</code>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
 
