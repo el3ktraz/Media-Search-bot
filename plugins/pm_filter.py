@@ -369,11 +369,27 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "extra":
             buttons = [
                 [
-                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-                    InlineKeyboardButton("🏠 Home", callback_data="start")
+                    InlineKeyboardButton("🏠 Home", callback_data="start"),
+                    InlineKeyboardButton('👮‍♂️ Admin', callback_data='admin')
+                ],
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
                 ]
                 ]
             await query.message.edit(text="Help: <b>Extra Modules</b>\n\n<b>NOTE:</b>\n\n<b>These are the extra features of Alan Walker</b>/n/n<b>Commands and Usage:</b>\n• /id - <code>get id of a specifed user.</code>\n• /info  - <code>get information about a user.</code>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
+        elif query.data == "admin":
+            buttons = [
+                [
+                    InlineKeyboardButton("🏠 Home", callback_data="start"),
+                    InlineKeyboardButton("ℹ️ 𝙷𝚎𝚕𝚙", callback_data="help")
+                ],
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='extra')
+                ]
+                ]
+            await query.message.edit(text="Help: <b>Extra Modules</b>\n\n<b>NOTE:</b>\n\n<b>These are the Admin features of Alan Walker</b>/n/n/channel - <code>Get basic infomation about channels</code>\n/total - <code>Show total of saved files</code>\n/delete - <code>Delete file from database</code>\n/index - <code>Index all files from channel.</code>\n/logger - <code>Get log file</code>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+         
 
 
 
