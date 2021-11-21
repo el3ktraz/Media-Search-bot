@@ -370,22 +370,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "stats":
             buttons = [
                 [
-                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-                    InlineKeyboardButton('Refresh ♻️', callback_data='rfrsh')
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
                 ]
                 ]
             await query.message.edit(text="★ 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: <code>{await Media.count_documents()}</code>\n★ 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: <code>{await db.total_users_count()}</code>\n★ 𝚃𝙾𝚃𝙰𝙻 𝙲𝙷𝙰𝚃𝚂: <code>{await db.total_chat_count()}</code>\n★ 𝚄𝚂𝙴𝙳 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{await db.get_db_size()}</code> 𝙼𝚒𝙱\n★ 𝙵𝚁𝙴𝙴 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{get_size(free)}</code> 𝙼𝚒𝙱", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
   
-        elif query.data == "rfrsh":
-            await query.answer("Fetching MongoDb DataBase")
-            buttons = [
-                [
-                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-                    InlineKeyboardButton('Refresh ♻️', callback_data='rfrsh')
-                ]
-                ]
-            await query.message.edit(text="★ 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: <code>{await Media.count_documents()}</code>\n★ 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: <code>{await db.total_users_count()}</code>\n★ 𝚃𝙾𝚃𝙰𝙻 𝙲𝙷𝙰𝚃𝚂: <code>{await db.total_chat_count()}</code>\n★ 𝚄𝚂𝙴𝙳 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{await db.get_db_size()}</code> 𝙼𝚒𝙱\n★ 𝙵𝚁𝙴𝙴 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{get_size(free)}</code> 𝙼𝚒𝙱", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
-         
 
 
         elif query.data.startswith("subinps"):
