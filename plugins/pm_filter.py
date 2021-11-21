@@ -325,7 +325,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton("🔐 𝙲𝚕𝚘𝚜𝚎", callback_data="close")
                 ]
                 ]
-            await query.message.edit(text="✯ 𝙼𝚈 𝙽𝙰𝙼𝙴 : <a href='https://t.me/tvseriezzz_bot'>𝙰𝚕𝚊𝚗 𝚆𝚊𝚕𝚔𝚎𝚛</a>\n✯ 𝙲𝚁𝙴𝙰𝚃𝙾𝚁: <a href='https://t.me/tvseriezzz'>𝚃𝚎𝚊𝚖 𝙰𝚕𝚕 𝚒𝚗 𝙾𝚗𝚎 𝙶𝚛𝚘𝚞𝚙</a>\n✯ 𝙻𝙸𝙱𝚁𝙰𝚁𝚈: <a href='https://docs.pyrogram.org'>𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼</a>\n✯ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴: <a href='https://www.python.org'>𝙿𝚈𝚃𝙷𝙾𝙽 𝟹</a>\n✯ 𝙳𝙰𝚃𝙰 𝙱𝙰𝚂𝙴: <a href='https://cloud.mongodb.com'>𝙼𝙾𝙽𝙶𝙾 𝙳𝙱</a>\n✯ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁: <a href='https://heroku.com'>𝙷𝙴𝚁𝙾𝙺𝚄</a>\n✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v1.0.1 [ 𝙱𝙴𝚃𝙰 ]\n\n©️ MᴀɪɴᴛᴀɪɴᴇD Bʏ : <a href='https://t.me/tvseriezzz'>♠️ 𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑</a>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=script.ABOUT_TXT, reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "help":
             buttons = [
@@ -342,7 +342,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton("🔐 𝙲𝚕𝚘𝚜𝚎", callback_data="close")
                 ]
                 ]
-            await query.message.edit(text="<b>If You Have Any Doubts And If Any Errors or Bugs Inform Us On Our Support Group ❗️\n Use Below Buttons To Get Support Group / Update channel Links </b>\n\n©️ MᴀɪɴᴛᴀɪɴᴇD Bʏ : <a href='https://t.me/tvseriezzz'>♠️ 𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑</a>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=script.HELP_TXT.format(query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "start":
             buttons = [
@@ -377,7 +377,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
                 ]
                 ]
-            await query.message.edit(text="Help: <b>Extra Modules</b>\n\n<b>NOTE:</b>\n\n<b>These are the extra features of Alan Walker</b>/n/n<b>Commands and Usage:</b>\n• /id - <code>get id of a specifed user.</code>\n• /info  - <code>get information about a user.</code>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=script.EXTRAMOD_TXT, reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "admin":
             buttons = [
@@ -389,7 +389,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('👩‍🦯 Back', callback_data='extra')
                 ]
                 ]
-            await query.message.edit(text="Help: <b>Extra Modules</b>\n\n<b>NOTE:</b>\n\n<b>These are the Admin features of Alan Walker</b>\n\n/channel - <code>Get basic infomation about channels</code>\n/total - <code>Show total of saved files</code>\n/delete - <code>Delete file from database</code>\n/index - <code>Index all files from channel.</code>\n/logger - <code>Get log file</code>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=script.ADMIN_TXT, reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
          
 
         elif query.data.startswith("subinps"):
