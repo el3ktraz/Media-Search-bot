@@ -388,7 +388,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('👩‍🦯 Back', callback_data='extra')
                 ]
                 ]
-            await query.message.edit(text="Help: <b>Extra Modules</b>\n\n<b>NOTE:</b>\n\n<b>These are the Admin features of Alan Walker</b>/n/n/channel - <code>Get basic infomation about channels</code>\n/total - <code>Show total of saved files</code>\n/delete - <code>Delete file from database</code>\n/index - <code>Index all files from channel.</code>\n/logger - <code>Get log file</code>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text="Help: <b>Extra Modules</b>\n\n<b>NOTE:</b>\n\n<b>These are the Admin features of Alan Walker</b>\n\n/channel - <code>Get basic infomation about channels</code>\n/total - <code>Show total of saved files</code>\n/delete - <code>Delete file from database</code>\n/index - <code>Index all files from channel.</code>\n/logger - <code>Get log file</code>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
          
 
         elif query.data.startswith("subinps"):
