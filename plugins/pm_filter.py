@@ -323,7 +323,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]
             await query.message.edit(text="✯ 𝙼𝚈 𝙽𝙰𝙼𝙴 : <a href='https://t.me/tvseriezzz_bot'>𝙰𝚕𝚊𝚗 𝚆𝚊𝚕𝚔𝚎𝚛</a>\n✯ 𝙲𝚁𝙴𝙰𝚃𝙾𝚁: <a href='https://t.me/tvseriezzz'>𝚃𝚎𝚊𝚖 𝙰𝚕𝚕 𝚒𝚗 𝙾𝚗𝚎 𝙶𝚛𝚘𝚞𝚙</a>\n✯ 𝙻𝙸𝙱𝚁𝙰𝚁𝚈: <a href='https://docs.pyrogram.org'>𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼</a>\n✯ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴: <a href='https://www.python.org'>𝙿𝚈𝚃𝙷𝙾𝙽 𝟹</a>\n✯ 𝙳𝙰𝚃𝙰 𝙱𝙰𝚂𝙴: <a href='https://cloud.mongodb.com'>𝙼𝙾𝙽𝙶𝙾 𝙳𝙱</a>\n✯ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁: <a href='https://heroku.com'>𝙷𝙴𝚁𝙾𝙺𝚄</a>\n✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v1.0.1 [ 𝙱𝙴𝚃𝙰 ]\n\n©️ MᴀɪɴᴛᴀɪɴᴇD Bʏ : <a href='https://t.me/tvseriezzz'>♠️ 𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑</a>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
-       elif query.data == "help":
+        elif query.data == "help":
             buttons = [
                 [
                     InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz"),
