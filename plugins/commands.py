@@ -216,4 +216,4 @@ async def bot_info(bot, message):
         ]
         ]
     await message.reply(text="<b>If You Have Any Doubts And If Any Errors or Bugs Inform Us On Our Support Group ❗️\n Use Below Buttons To Get Support Group / Update channel Links </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
-🙃
+
