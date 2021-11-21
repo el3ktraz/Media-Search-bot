@@ -2,7 +2,7 @@ import re
 import base64
 import logging
 from struct import pack
-from pyrogram.errors import UserNotParticipant, FloodWait
+from pyrogram.errors import InputUserDeactivated, UserNotParticipant, FloodWait
 from pyrogram.types import Message
 from typing import Union
 from pyrogram.file_id import FileId
