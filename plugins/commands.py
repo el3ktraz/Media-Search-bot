@@ -1,8 +1,9 @@
 import os
 import logging
+import random
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
+from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, PICS
 from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
@@ -93,8 +94,8 @@ async def start(bot, cmd):
         )
     else:
         await cmd.reply_video(
-            video="https://telegra.ph/file/2451d574ac17276c3a0e6.mp4",
-            caption=START_MSG,
+            video=random.choice(PICS),
+            caption=START_MSG.format(message.from_user.mention),
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
