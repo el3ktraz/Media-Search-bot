@@ -1,5 +1,5 @@
 #Kanged From @TroJanZheX
-from info import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, BUTTON
+from info import START_MSG, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, BUTTON, PICS
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 import re
@@ -331,13 +331,42 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton("𝙰𝚋𝚘𝚞𝚝 🚩", callback_data="about"),
+                    InlineKeyboardButton("🏠 Home", callback_data="start")
+                ],
+                [
                     InlineKeyboardButton("🔐 𝙲𝚕𝚘𝚜𝚎", callback_data="close")
                 ]
                 ]
             await query.message.edit(text="<b>If You Have Any Doubts And If Any Errors or Bugs Inform Us On Our Support Group ❗️\n Use Below Buttons To Get Support Group / Update channel Links </b>\n\n©️ MᴀɪɴᴛᴀɪɴᴇD Bʏ : <a href='https://t.me/tvseriezzz'>♠️ 𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑</a>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
+        elif query.data == "start":
+            await cmd.reply_video(
+            video=random.choice(PICS),
+            caption=START_MSG.format(cmd.from_user.mention),
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url="https://t.me/tvseriezzz_bot?startgroup=botstart")
+                    ],
+                    [
+                        InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz"),
+                        InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update")
+                    ],
+                    [
+                        InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ 2 ♻️", url="https://t.me/MrCVENOM_chat"),
+                        InlineKeyboardButton("🔥 Dev 🔥", url="https://t.me/MrC_VENOM")
+                    ],
+                    [
+                        InlineKeyboardButton("𝙰𝚋𝚘𝚞𝚝 🚩", callback_data="about"),
+                        InlineKeyboardButton("ℹ️ 𝙷𝚎𝚕𝚙", callback_data="help")
+                    ],
+                    [
+                        InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
+                    ]
+                ]
+            )
+        )
           
-
-
 
         elif query.data.startswith("subinps"):
             ident, file_id = query.data.split("#")
