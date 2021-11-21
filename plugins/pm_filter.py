@@ -337,7 +337,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton("🏠 Home", callback_data="start")
                 ],
                 [
-                    InlineKeyboardButton('🔮 Status', callback_data='stats'),
+                    InlineKeyboardButton('😌 𝙴𝚡𝚝𝚛𝚊 𝚖𝚘𝚍', callback_data='extra'),
                     InlineKeyboardButton("🔐 𝙲𝚕𝚘𝚜𝚎", callback_data="close")
                 ]
                 ]
@@ -364,7 +364,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
                 ]
                 ]
-            await query.message.edit(text="𝙷𝙴𝙻𝙻𝙾 {} 😊,\n\n𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href='https://t.me/tvseriezzz_bot'>𝙰𝚕𝚊𝚗 𝚆𝚊𝚕𝚔𝚎𝚛</a>,\n\n𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂 𝙰𝙽𝙳 𝚂𝙴𝚁𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈 😍\n\n<b>©️ MᴀɪɴᴛᴀɪɴᴇD Bʏ : <a href='https://t.me/tvseriezzz'>♠️ 𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text="𝙷𝙴𝙻𝙻𝙾 𝙵𝚛𝚒𝚎𝚗𝚍 😊,\n\n𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href='https://t.me/tvseriezzz_bot'>𝙰𝚕𝚊𝚗 𝚆𝚊𝚕𝚔𝚎𝚛</a>,\n\n𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂 𝙰𝙽𝙳 𝚂𝙴𝚁𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈 😍\n\n<b>©️ MᴀɪɴᴛᴀɪɴᴇD Bʏ : <a href='https://t.me/tvseriezzz'>♠️ 𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
+        elif query.data == "extra":
+            buttons = [
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
+                    InlineKeyboardButton("🏠 Home", callback_data="start")
+                ]
+                ]
+            await query.message.edit(text=Help: <b>Extra Modules</b>\n\n<b>NOTE:</b>\n\n<b>These are the extra features of Alan Walker</b>/n/n<b>Commands and Usage:</b>\n• /id - <code>get id of a specifed user.</code>\n• /info  - <code>get information about a user.</code>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
 
