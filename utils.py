@@ -14,6 +14,7 @@ import os
 import PTN
 import requests
 import json
+from database.users_chats_db import db
 from info import DATABASE_URI, DATABASE_NAME, COLLECTION_NAME, USE_CAPTION_FILTER, AUTH_CHANNEL, API_KEY
 DATABASE_URI_2=os.environ.get('DATABASE_URI_2', DATABASE_URI)
 DATABASE_NAME_2=os.environ.get('DATABASE_NAME_2', DATABASE_NAME)
@@ -249,6 +250,28 @@ async def get_poster(movie):
             pass
     return poster
 
+# https://github.com/odysseusmax/animated-lamp/blob/2ef4730eb2b5f0596ed6d03e7b05243d93e3415b/bot/utils/broadcast.py#L37
+
+async def broadcast_messages(user_id, message):
+    try:
+        await message.copy(chat_id=user_id)
+        return True, "Succes"
+    except FloodWait as e:
+        await asyncio.sleep(e.x)
+        return await broadcast_messages(user_id, message)
+    except InputUserDeactivated:
+        await db.delete_user(int(user_id))
+        logging.info(f"{user_id}-Removed from Database, since deleted account.")
+        return False, "Deleted"
+    except UserIsBlocked:
+        logging.info(f"{user_id} -Blocked the bot.")
+        return False, "Blocked"
+    except PeerIdInvalid:
+        await db.delete_user(int(user_id))
+        logging.info(f"{user_id} - PeerIdInvalid")
+        return False, "Error"
+    except Exception as e:
+        return False, "Error"
 
 async def get_all(list):
     for y in list:
