@@ -7,6 +7,8 @@ from utils import get_size
 from Script import script
 from pyrogram.errors import ChatAdminRequired
 
+"""-----------------------------------------https://t.me/GetTGLink/4179 --------------------------------------"""
+
 @Client.on_message(filters.new_chat_members & filters.group)
 async def save_group(bot, message):
     r_j_check = [u.id for u in message.new_chat_members]
@@ -187,3 +189,7 @@ async def list_chats(bot, message):
         out += f"**Title:** `{chat['title']}`\n**- ID:** `{chat['id']}`\n"
     try:
         await raju.edit_text(out)
+    except MessageTooLong:
+        with open('chats.txt', 'w+') as outfile:
+            outfile.write(out)
+        await message.reply_document('chats.txt', caption="List Of Chats")
