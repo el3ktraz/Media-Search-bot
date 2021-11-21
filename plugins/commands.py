@@ -9,7 +9,7 @@ from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start"))
-async def start(bot, cmd):
+async def start(bot, cmd, message):
     usr_cmdall1 = cmd.text
     if usr_cmdall1.startswith("/start subinps"):
         if AUTH_CHANNEL:
