@@ -9,7 +9,7 @@ from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start"))
-async def start(bot, cmd, message):
+async def start(bot, cmd):
     usr_cmdall1 = cmd.text
     if usr_cmdall1.startswith("/start subinps"):
         if AUTH_CHANNEL:
@@ -95,7 +95,7 @@ async def start(bot, cmd, message):
     else:
         await cmd.reply_video(
             video=random.choice(PICS),
-            caption=START_MSG.format(message.from_user.mention),
+            caption=START_MSG.format(cmd.from_user.mention),
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
