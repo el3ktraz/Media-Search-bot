@@ -2,6 +2,7 @@
 from info import START_MSG, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, BUTTON, PICS
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
+from Script import script
 import re
 import pyrogram
 import random
@@ -337,6 +338,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton("🏠 Home", callback_data="start")
                 ],
                 [
+                    InlineKeyboardButton('🔮 Status', callback_data='stats'),
                     InlineKeyboardButton("🔐 𝙲𝚕𝚘𝚜𝚎", callback_data="close")
                 ]
                 ]
@@ -364,6 +366,48 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]
                 ]
             await query.message.edit(text="𝙷𝙴𝙻𝙻𝙾 {} 😊,\n\n𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href='https://t.me/tvseriezzz_bot'>𝙰𝚕𝚊𝚗 𝚆𝚊𝚕𝚔𝚎𝚛</a>,\n\n𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂 𝙰𝙽𝙳 𝚂𝙴𝚁𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈 😍\n\n<b>©️ MᴀɪɴᴛᴀɪɴᴇD Bʏ : <a href='https://t.me/tvseriezzz'>♠️ 𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
+        elif query.data == "stats":
+            buttons = [
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
+                    InlineKeyboardButton('Refresh ♻️', callback_data='rfrsh')
+                ]
+                ]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            total = await Media.count_documents()
+            users = await db.total_users_count()
+            chats = await db.total_chat_count()
+            monsize = await db.get_db_size()
+            free = 536870912 - monsize
+            monsize = get_size(monsize)
+            free = get_size(free)
+            await query.message.edit_text(
+                text=script.STATUS_TXT.format(total, users, chats, monsize, free),
+                reply_markup=reply_markup,
+                parse_mode='html'
+            )
+        elif query.data == "rfrsh":
+            await query.answer("Fetching MongoDb DataBase")
+            buttons = [
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
+                    InlineKeyboardButton('Refresh ♻️', callback_data='rfrsh')
+                ]
+                ]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            total = await Media.count_documents()
+            users = await db.total_users_count()
+            chats = await db.total_chat_count()
+            monsize = await db.get_db_size()
+            free = 536870912 - monsize
+            monsize = get_size(monsize)
+            free = get_size(free)
+            await query.message.edit_text(
+                text=script.STATUS_TXT.format(total, users, chats, monsize, free),
+                reply_markup=reply_markup,
+                parse_mode='html'
+          )
          
 
 
