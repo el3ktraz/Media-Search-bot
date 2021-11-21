@@ -3,6 +3,7 @@ import base64
 import logging
 from struct import pack
 from pyrogram.errors import UserNotParticipant
+from pyrogram.types import Message
 from pyrogram.file_id import FileId
 from pymongo.errors import DuplicateKeyError
 from umongo import Instance, Document, fields
@@ -209,7 +210,6 @@ def last_online(from_user):
     elif from_user.status == 'offline':
         time += datetime.fromtimestamp(from_user.last_online_date).strftime("%a, %d %b %Y, %H:%M:%S")
     return time
-
 
 async def is_subscribed(bot, query):
     try:
