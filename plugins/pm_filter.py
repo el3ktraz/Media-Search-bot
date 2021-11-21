@@ -340,33 +340,29 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit(text="<b>If You Have Any Doubts And If Any Errors or Bugs Inform Us On Our Support Group ❗️\n Use Below Buttons To Get Support Group / Update channel Links </b>\n\n©️ MᴀɪɴᴛᴀɪɴᴇD Bʏ : <a href='https://t.me/tvseriezzz'>♠️ 𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑</a>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "start":
-            await cmd.reply_video(
-            video=random.choice(PICS),
-            caption=START_MSG.format(cmd.from_user.mention),
-            reply_markup=InlineKeyboardMarkup(
+            buttons = [
                 [
-                    [
-                        InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url="https://t.me/tvseriezzz_bot?startgroup=botstart")
-                    ],
-                    [
-                        InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz"),
-                        InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update")
-                    ],
-                    [
-                        InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ 2 ♻️", url="https://t.me/MrCVENOM_chat"),
-                        InlineKeyboardButton("🔥 Dev 🔥", url="https://t.me/MrC_VENOM")
-                    ],
-                    [
-                        InlineKeyboardButton("𝙰𝚋𝚘𝚞𝚝 🚩", callback_data="about"),
-                        InlineKeyboardButton("ℹ️ 𝙷𝚎𝚕𝚙", callback_data="help")
-                    ],
-                    [
-                        InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
-                    ]
+                    InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url="https://t.me/tvseriezzz_bot?startgroup=botstart")
+                ],
+                [
+                    InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz"),
+                    InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update")
+                ],
+                [
+                    InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ 2 ♻️", url="https://t.me/MrCVENOM_chat"),
+                    InlineKeyboardButton("🔥 Dev 🔥", url="https://t.me/MrC_VENOM")
+                ],
+                [
+                    InlineKeyboardButton("𝙰𝚋𝚘𝚞𝚝 🚩", callback_data="about"),
+                    InlineKeyboardButton("ℹ️ 𝙷𝚎𝚕𝚙", callback_data="help")
+                ],
+                [
+                    InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
                 ]
-            )
-        )
-          
+                ]
+            await query.message.edit(text="𝙷𝙴𝙻𝙻𝙾 {message.from_user.mention} 😊,\n\n𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href='https://t.me/tvseriezzz_bot'>𝙰𝚕𝚊𝚗 𝚆𝚊𝚕𝚔𝚎𝚛</a>,\n\n𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂 𝙰𝙽𝙳 𝚂𝙴𝚁𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈 😍\n\n<b>©️ MᴀɪɴᴛᴀɪɴᴇD Bʏ : <a href='https://t.me/tvseriezzz'>♠️ 𝑨𝒍𝒍 𝑰𝒏 𝑶𝒏𝒆 𝑮𝒓𝒐𝒖𝒑</a></b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+         
+
 
         elif query.data.startswith("subinps"):
             ident, file_id = query.data.split("#")
