@@ -374,19 +374,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Refresh ♻️', callback_data='rfrsh')
                 ]
                 ]
-            reply_markup = InlineKeyboardMarkup(buttons)
-            total = await Media.count_documents()
-            users = await db.total_users_count()
-            chats = await db.total_chat_count()
-            monsize = await db.get_db_size()
-            free = 536870912 - monsize
-            monsize = get_size(monsize)
-            free = get_size(free)
-            await query.message.edit_text(
-                text=script.STATUS_TXT.format(total, users, chats, monsize, free),
-                reply_markup=reply_markup,
-                parse_mode='html'
-            )
+            await query.message.edit(text="★ 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: <code>{await Media.count_documents()}</code>\n★ 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: <code>{await db.total_users_count()}</code>\n★ 𝚃𝙾𝚃𝙰𝙻 𝙲𝙷𝙰𝚃𝚂: <code>{await db.total_chat_count()}</code>\n★ 𝚄𝚂𝙴𝙳 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{await db.get_db_size()}</code> 𝙼𝚒𝙱\n★ 𝙵𝚁𝙴𝙴 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{get_size(free)}</code> 𝙼𝚒𝙱", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+  
         elif query.data == "rfrsh":
             await query.answer("Fetching MongoDb DataBase")
             buttons = [
@@ -395,19 +384,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Refresh ♻️', callback_data='rfrsh')
                 ]
                 ]
-            reply_markup = InlineKeyboardMarkup(buttons)
-            total = await Media.count_documents()
-            users = await db.total_users_count()
-            chats = await db.total_chat_count()
-            monsize = await db.get_db_size()
-            free = 536870912 - monsize
-            monsize = get_size(monsize)
-            free = get_size(free)
-            await query.message.edit_text(
-                text=script.STATUS_TXT.format(total, users, chats, monsize, free),
-                reply_markup=reply_markup,
-                parse_mode='html'
-          )
+            await query.message.edit(text="★ 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: <code>{await Media.count_documents()}</code>\n★ 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: <code>{await db.total_users_count()}</code>\n★ 𝚃𝙾𝚃𝙰𝙻 𝙲𝙷𝙰𝚃𝚂: <code>{await db.total_chat_count()}</code>\n★ 𝚄𝚂𝙴𝙳 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{await db.get_db_size()}</code> 𝙼𝚒𝙱\n★ 𝙵𝚁𝙴𝙴 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{get_size(free)}</code> 𝙼𝚒𝙱", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
          
 
 
