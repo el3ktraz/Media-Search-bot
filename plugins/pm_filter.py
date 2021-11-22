@@ -314,8 +314,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton("♻️ ⒼⓇⓄⓊⓅ ♻️", url="https://t.me/tvseriezzz"),
-                    InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update")
+                    InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update"),
+                    InlineKeyboardButton('♥️ Source', callback_data='source')
                 ],
                 [
                     InlineKeyboardButton("ℹ️ 𝙷𝚎𝚕𝚙", callback_data="help"),
@@ -334,11 +334,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton("⭕️ 𝙲𝙷𝙰𝙽𝙽𝙴𝙻 ⭕️", url="https://t.me/tvseriezzz_update")
                 ],
                 [
-                    InlineKeyboardButton("𝙰𝚋𝚘𝚞𝚝 🚩", callback_data="about"),
+                    InlineKeyboardButton('🙂 𝙲𝚘𝚗𝚗𝚎𝚌𝚝𝚒𝚘𝚗', callback_data='coct'),
                     InlineKeyboardButton("🏠 Home", callback_data="start")
                 ],
                 [
                     InlineKeyboardButton('😌 𝙴𝚡𝚝𝚛𝚊 𝚖𝚘𝚍', callback_data='extra'),
+                    InlineKeyboardButton('🔮 𝚂𝚝𝚊𝚝𝚞𝚜', callback_data='stats')
+                ],
+                [
                     InlineKeyboardButton("🔐 𝙲𝚕𝚘𝚜𝚎", callback_data="close")
                 ]
                 ]
@@ -390,6 +393,59 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]
                 ]
             await query.message.edit(text=script.ADMIN_TXT, reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
+        elif query.data == "source":
+            buttons = [
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='about'),
+                    InlineKeyboardButton("🏠 Home", callback_data="start")
+                ]
+                ]
+            await query.message.edit(text=script.SOURCE_TXT, reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
+        elif query.data == "coct":
+            buttons = [
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
+                    InlineKeyboardButton("🏠 Home", callback_data="start")
+                ]
+                ]
+            await query.message.edit(text=script.CONNECTION_TXT, reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
+        elif query.data == "stats":
+            buttons = [
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
+                    InlineKeyboardButton('Refresh ♻️', callback_data='rfrsh')
+                ]
+                ]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            total = await Media.count_documents()
+            users = await db.total_users_count()
+            chats = await db.total_chat_count()
+            monsize = await db.get_db_size()
+            free = 536870912 - monsize
+            monsize = get_size(monsize)
+            free = get_size(free)
+            await query.message.edit(text=script.STATUS_TXT.format(total, users, chats, monsize, free), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
+        elif query.data == "rfrsh":
+            await query.answer("Fetching MongoDb DataBase")
+            buttons = [
+                [
+                    InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
+                    InlineKeyboardButton('Refresh ♻️', callback_data='rfrsh')
+                ]
+                ]
+            reply_markup = InlineKeyboardMarkup(buttons)
+            total = await Media.count_documents()
+            users = await db.total_users_count()
+            chats = await db.total_chat_count()
+            monsize = await db.get_db_size()
+            free = 536870912 - monsize
+            monsize = get_size(monsize)
+            free = get_size(free)
+            await query.message.edit(text=script.STATUS_TXT.format(total, users, chats, monsize, free), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
          
 
         elif query.data.startswith("subinps"):
