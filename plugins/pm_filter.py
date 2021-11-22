@@ -80,9 +80,12 @@ async def filter(client, message):
                     [InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}")]
                     )
         else:
-            await client.send_message(chat_id=message.from_user.id,text=f"""**Sorry, No Movie/Series Related to the Given Word Was Found 🥺**\n\n**Please Go to Google and Confirm the Correct Spelling 🙏**""",
+            await client.send_message(chat_id=message.from_user.id,text=f"""**Sorry, {message.from_user.first_name} 🥺**\n\n**No Movie/Series Related to the Given Word Was Found 🥺**\n\n**Please Go to Google and Confirm the Correct Spelling 🙏**""",
             reply_markup=InlineKeyboardMarkup(
                     [
+                        [
+                            InlineKeyboardButton("📃 MUST READ | Click Here 📃", url="https://t.me/vayichitt_poyamathii")
+                        ],
                         [
                             InlineKeyboardButton("🔍 Click Here & Go To Google 🔎", url=f"https://www.google.com")
                         ]
@@ -162,6 +165,9 @@ async def group(client, message):
             text=f"""**Sorry, {message.from_user.first_name} 🥺**\n\n**No Movie/Series Related to the Given Word Was Found 🥺**\n\n**Please Go to Google and Confirm the Correct Spelling 🙏**""",
             reply_markup=InlineKeyboardMarkup(
                     [
+                        [
+                            InlineKeyboardButton("📃 MUST READ | Click Here 📃", url="https://t.me/vayichitt_poyamathii")
+                        ],
                         [
                             InlineKeyboardButton("🔍 Click Here & Go To Google 🔎", url="https://www.google.com")
                         ]
