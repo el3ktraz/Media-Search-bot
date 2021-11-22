@@ -195,6 +195,16 @@ def extract_user(message: Message) -> Union[int, str]:
         user_first_name = message.from_user.first_name
     return (user_id, user_first_name)
 
+# temp db for banned 
+class temp(object):
+    BANNED_USERS = []
+    BANNED_CHATS = []
+    ME = None
+    CURRENT=int(os.environ.get("SKIP", 2))
+    CANCEL = False
+    MELCOW = {}
+    U_NAME = None
+    B_NAME = None
 
 async def is_subscribed(bot, query):
     try:
