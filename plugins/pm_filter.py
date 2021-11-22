@@ -338,10 +338,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton('🙂 𝙲𝚘𝚗𝚗𝚎𝚌𝚝𝚒𝚘𝚗', callback_data='coct'),
-                    InlineKeyboardButton("🏠 Home", callback_data="start")
+                    InlineKeyboardButton('😌 𝙴𝚡𝚝𝚛𝚊 𝚖𝚘𝚍', callback_data='extra')
                 ],
                 [
-                    InlineKeyboardButton('😌 𝙴𝚡𝚝𝚛𝚊 𝚖𝚘𝚍', callback_data='extra'),
+                    InlineKeyboardButton("🏠 Home", callback_data="start"),
                     InlineKeyboardButton('🔮 𝚂𝚝𝚊𝚝𝚞𝚜', callback_data='stats')
                 ],
                 [
