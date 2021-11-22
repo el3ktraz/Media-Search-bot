@@ -45,7 +45,6 @@ This module only works for my admins
 • /channel - <code>to get list of total connected channels</code>
 • /broadcast - <code>to broadcast a message to all users</code>
 • /total - <code>Show total of saved files</code>
-• /index - <code>Index all files from channel.</code>
 • /logger - <code>Get log file</code>"""
     STATUS_TXT = """★ 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: <code>{}</code>
 ★ 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: <code>{}</code>
@@ -56,10 +55,6 @@ This module only works for my admins
 Group = {}(<code>{}</code>)
 Total Members = <code>{}</code>
 Added By - {}
-"""
-    LOG_TEXT_P = """#NewUser
-ID - <code>{}</code>
-Name - {}
 """
 
 
