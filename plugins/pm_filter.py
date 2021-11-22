@@ -368,7 +368,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton("ℹ️ 𝙷𝚎𝚕𝚙", callback_data="help")
                 ],
                 [
-                    InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
+                    InlineKeyboardButton('🔍 Search 🔎', switch_inline_query_current_chat='')
                 ]
                 ]
             await query.message.edit(text=script.START_MSG.format(query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
