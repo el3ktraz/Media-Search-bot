@@ -85,7 +85,6 @@ This module only works for my admins
 • /ban  - <code>to ban a user.</code>
 • /delete - <code>to delete a specific file from db.</code>
 • /unban  - <code>to unban a user.</code>
-• /total - <code>Show total of saved files</code>
 • /logger - <code>Get log file</code>
 • /channel - <code>to get list of total connected channels</code>
 • /broadcast - <code>to broadcast a message to all users</code>
