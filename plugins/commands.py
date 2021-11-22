@@ -114,7 +114,7 @@ async def start(bot, cmd):
                         InlineKeyboardButton("ℹ️ 𝙷𝚎𝚕𝚙", callback_data="help")
                     ],
                     [
-                        InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat='')
+                        InlineKeyboardButton('🔍 Search 🔎', switch_inline_query_current_chat='')
                     ]
                 ]
             )
