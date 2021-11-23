@@ -26,7 +26,7 @@ client = AsyncIOMotorClient(DATABASE_URI_2)
 db = client[DATABASE_NAME]
 instance = Instance.from_db(db)
 
-IClient = AsyncIOMotorClient(DATABASE_URI)
+IClient = AsyncIOMotorClient(DATABASE_URI_2)
 imdbdb=client[DATABASE_NAME_2]
 imdb=Instance.from_db(imdbdb)
 
