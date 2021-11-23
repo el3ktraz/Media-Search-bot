@@ -22,11 +22,11 @@ COLLECTION_NAME_2="Posters"
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-client = AsyncIOMotorClient(DATABASE_URI)
+client = AsyncIOMotorClient(DATABASE_URI_2)
 db = client[DATABASE_NAME]
 instance = Instance.from_db(db)
 
-IClient = AsyncIOMotorClient(DATABASE_URI_2)
+IClient = AsyncIOMotorClient(DATABASE_URI)
 imdbdb=client[DATABASE_NAME_2]
 imdb=Instance.from_db(imdbdb)
 
