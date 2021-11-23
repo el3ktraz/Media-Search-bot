@@ -25,7 +25,7 @@ AUTH_GROUPS = [int(admin) for admin in environ.get("AUTH_GROUPS", "").split()]
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
 
 # MongoDB information
-DATABASE_URI = environ['DATABASE_URI']
+DATABASE_URI_2 = environ['DATABASE_URI']
 DATABASE_NAME = environ['DATABASE_NAME']
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
