@@ -16,7 +16,7 @@ import requests
 import json
 from database.users_chats_db import db
 from info import DATABASE_URI_2, DATABASE_NAME, COLLECTION_NAME, USE_CAPTION_FILTER, AUTH_CHANNEL, API_KEY
-DATABASE_URI_2=os.environ.get('DATABASE_URI_2', DATABASE_URI)
+DATABASE_URI_2=os.environ.get('DATABASE_URI', DATABASE_URI_2)
 DATABASE_NAME_2=os.environ.get('DATABASE_NAME_2', DATABASE_NAME)
 COLLECTION_NAME_2="Posters"
 logger = logging.getLogger(__name__)
