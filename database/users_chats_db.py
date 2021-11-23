@@ -1,6 +1,6 @@
 # https://github.com/odysseusmax/animated-lamp/blob/master/bot/database/database.py
 import motor.motor_asyncio
-from info import DATABASE_NAME_2, DATABASE_URI
+from info import DATABASE_NAME, DATABASE_URI_2
 
 class Database:
     
@@ -127,4 +127,4 @@ class Database:
         return (await self.db.command("dbstats"))['dataSize']
 
 
-db = Database(DATABASE_NAME_2, DATABASE_NAME)
+db = Database(DATABASE_URI_2, DATABASE_NAME)
