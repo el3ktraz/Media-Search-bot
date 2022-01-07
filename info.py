@@ -44,6 +44,8 @@ START_MSG = environ.get('START_MSG', default_start_msg)
 
 BUTTON = environ.get("BUTTON",True)
 FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "")
+BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
+FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '-1001509131988')).split()]
 OMDB_API_KEY = environ.get("OMDB_API_KEY", "")
 if FILE_CAPTION.strip() == "":
     CUSTOM_FILE_CAPTION=None
